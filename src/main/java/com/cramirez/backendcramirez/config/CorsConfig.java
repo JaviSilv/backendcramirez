@@ -12,14 +12,14 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/**")
+                registry.addMapping("/**") // Aplica a todas las rutas
                         .allowedOrigins(
-                                "http://localhost:5173", // Permite desarrollo local
-                                "https://frontendcramirez.onrender.com" // Permite producción en Render
+                                "http://localhost:5173",  // Desarrollo local
+                                "https://frontend-cramirez.onrender.com"  // Producción
                         )
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*")
-                        .allowCredentials(true);
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos permitidos
+                        .allowedHeaders("*") // Permitir todos los headers
+                        .allowCredentials(true); // Permitir autenticación con cookies/tokens
             }
         };
     }
