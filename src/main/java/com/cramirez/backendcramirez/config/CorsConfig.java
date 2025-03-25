@@ -15,7 +15,7 @@ public class CorsConfig {
                         .allowedOrigins(
                                 "http://localhost:5173",
                                 "https://frontend-cramirez.onrender.com",
-                                "https://cramirezsac.onrender.com"// Producción
+                                "https://cramirezsac.onrender.com"
 
                         )// Permitir el frontend en Vue
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos HTTP permitidos
