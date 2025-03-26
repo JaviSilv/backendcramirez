@@ -14,7 +14,7 @@ public class CorsConfig {
                 registry.addMapping("/api/**") // Aplica a todas las rutas de la API
                         .allowedOrigins(
                                 "http://localhost:5173",
-                                "http://104.248.115.32/"
+                                "http://104.248.115.32"
 
                         )// Permitir el frontend en Vue
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos HTTP permitidos
