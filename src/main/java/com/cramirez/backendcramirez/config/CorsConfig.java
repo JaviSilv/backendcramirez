@@ -1,4 +1,5 @@
 package com.cramirez.backendcramirez.config;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -11,14 +12,10 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/**") // Aplica a todas las rutas de la API
-                        .allowedOrigins(
-                                "http://localhost:5173",
-                                "http://104.248.115.32"  // Agrega la IP del Droplet
-                        )
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*")
-                        .allowCredentials(true);
+                registry.addMapping("/**")
+                        .allowedOrigins("https://cramirezsac.vercel.app") // Permitir solo tu frontend en Vercel
+                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                        .allowCredentials(true); // Si usas autenticación con cookies o headers personalizados
             }
         };
     }
