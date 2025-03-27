@@ -13,9 +13,10 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://cramirezsac.vercel.app") // Permitir solo tu frontend en Vercel
+                        .allowedOrigins("https://cramirezsac.vercel.app") // Permitir solo el frontend en Vercel
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
-                        .allowCredentials(true); // Si usas autenticación con cookies o headers personalizados
+                        .allowedHeaders("*") // Permitir todos los encabezados
+                        .allowCredentials(true); // Si usas autenticación basada en cookies o headers personalizados
             }
         };
     }
