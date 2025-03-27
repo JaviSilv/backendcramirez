@@ -1,9 +1,8 @@
-# Etapa 1: Construcción del JAR
 # Etapa 1: Construcción de la aplicación
-FROM maven:3.8.6-eclipse-temurin-17 AS build
+FROM maven:3.8.6-eclipse-temurin-21 AS build
 WORKDIR /app
 
-# Copiar solo los archivos necesarios para descargar dependencias primero
+# Copiar solo el pom.xml para descargar dependencias primero
 COPY pom.xml ./
 RUN mvn dependency:go-offline  # Descarga dependencias sin compilar
 
@@ -14,7 +13,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Etapa 2: Ejecución del JAR
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
