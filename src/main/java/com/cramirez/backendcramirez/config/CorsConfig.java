@@ -14,13 +14,11 @@ public class CorsConfig {
                 registry.addMapping("/api/**") // Aplica a todas las rutas de la API
                         .allowedOrigins(
                                 "http://localhost:5173",
-                                "https://frontend-cramirez.onrender.com",
-                                "https://cramirezsac.onrender.com"
-
-                        )// Permitir el frontend en Vue
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos HTTP permitidos
-                        .allowedHeaders("*") // Permitir todos los headers
-                        .allowCredentials(true); // Permitir credenciales (cookies, headers de autenticación)
+                                "http://104.248.115.32"  // Agrega la IP del Droplet
+                        )
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
             }
         };
     }
