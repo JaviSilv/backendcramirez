@@ -12,9 +12,6 @@ public class Credenciales {
     @Column(name = "ID_Credencial")
     private Long idCredencial;
 
-    @Column(name = "ID_Cliente")
-    private Long idCliente;
-
     @Column(name = "Nombre", nullable = false)
     private String nombre;
 
